@@ -1,0 +1,4 @@
+repository "Memory Adventure@huy110903@cloud"
+  path "/"
+    br "/main"
+    co "/main"
