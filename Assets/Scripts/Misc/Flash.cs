@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Flash : MonoBehaviour
@@ -20,9 +19,16 @@ public class Flash : MonoBehaviour
 
     public IEnumerator FlashRoutine()
     {
+        // Create a white flash effect when the enemy is hit
         spriteRenderer.material = whiteFlashMaterial;
+
+        // Wait for a short time before returning the enemy to its original color
         yield return new WaitForSeconds(defaultMaterial);
+
+        // Return the enemy to its original color
         spriteRenderer.material = defaultMaterialRef;
+
+        // Check if the enemy is dead
         enemyHealth.DetectDeath();
     }
 

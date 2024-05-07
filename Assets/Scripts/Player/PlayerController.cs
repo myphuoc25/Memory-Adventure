@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TrailRenderer trailRenderer;
 
     private bool isBoosting = false;
-    private bool isDashing = false;
     public bool FacingLeft { get; private set; } = false;
     public static PlayerController Instance;
 
@@ -102,30 +101,34 @@ public class PlayerController : MonoBehaviour
             currentMoveSpeed *= boostSpeed;
         }
 
-        //rb.velocity = movement * moveSpeed;
         rb.MovePosition(rb.position + currentMoveSpeed * Time.fixedDeltaTime * movement);
     }
 
     private void Dash()
     {
-        if (!isDashing)
-        {
-            isDashing = true;
-            moveSpeed *= dashSpeed;
-            trailRenderer.emitting = true;
-            StartCoroutine(EndDashRoutine());
-        }
+        // Tăng tốc độ di chuyển lên dashSpeed
+        moveSpeed *= dashSpeed;
+
+        // Bật trailRenderer để hiển thị hiệu ứng Dash
+        trailRenderer.emitting = true;
+
+        // Xử lý việc kết thúc Dash sau một khoảng thời gian nhất định.
+        StartCoroutine(EndDashRoutine());
     }
 
     private IEnumerator EndDashRoutine()
     {
+        // Đặt thời gian Dash và thời gian chờ giữa các lần Dash
         float dashTime = .2f;
         float dashCD = .25f;
+
+        // Chờ một khoảng thời gian dashTime
         yield return new WaitForSeconds(dashTime);
         moveSpeed /= dashSpeed;
         trailRenderer.emitting = false;
+
+        // Chờ một khoảng thời gian dashCD trước khi cho phép Dash tiếp
         yield return new WaitForSeconds(dashCD);
-        isDashing = false;
     }
 
 }
