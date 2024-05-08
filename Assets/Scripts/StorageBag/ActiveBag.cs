@@ -27,7 +27,7 @@ public class ActiveBag : MonoBehaviour
     {
         playerControls.Inventory.SwitchActiveBag.performed += ctx => ToggleActiveBag((int)ctx.ReadValue<float>());
 
-        //ToggleActiveBag(activeSlotIndexNum);
+        ToggleActiveBag(activeSlotIndexNum + 1);
     }
 
     private void ToggleActiveBag(int indexSlot)
@@ -51,17 +51,17 @@ public class ActiveBag : MonoBehaviour
         // If the active slot is empty, return
         if (!transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>())
         {
+            Debug.Log("No weapon in this slot");
             ActiveWeapon.Instance.WeaponNull();
             return;
         }
 
-        GameObject weaponSlot = transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().GetWeaponInfo.weaponPrefab;
+        GameObject weaponSlot = transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo.weaponPrefab;
         GameObject newWeapon = Instantiate(weaponSlot, ActiveWeapon.Instance.transform.position, Quaternion.identity);
-
         newWeapon.transform.SetParent(ActiveWeapon.Instance.transform);
-
+        
         ActiveWeapon.Instance.NewWeapon(newWeapon.GetComponent<MonoBehaviour>());
-
+        
     }
 
 }

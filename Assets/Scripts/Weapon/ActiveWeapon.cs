@@ -55,7 +55,8 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     public void DestroyCurrentWeapon()
     {
-        if(CurrentActiveWeapon != null)
+        Debug.Log("Current weapon: " + CurrentActiveWeapon);
+        if (CurrentActiveWeapon != null)
         {
             Destroy(CurrentActiveWeapon.gameObject);
             Debug.Log("Destroying current weapon");
@@ -64,6 +65,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     public void NewWeapon(MonoBehaviour newWeapon)
     {
+        Debug.Log("New Weapon: " + newWeapon);
         CurrentActiveWeapon = newWeapon;
 
     }
