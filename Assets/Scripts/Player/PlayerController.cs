@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float boostSpeed = 1.7f;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] private Transform weaponCollider; // This is the collider of the weapon
 
     private bool isBoosting = false;
     public bool FacingLeft { get; private set; } = false;
-    public static PlayerController Instance;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -21,9 +21,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSprite;
     
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
+        base.Awake();
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
@@ -55,6 +55,13 @@ public class PlayerController : MonoBehaviour
     {
         FlipSprite();
         Move();
+    }
+
+    // Getter & Setter
+
+    public Transform GetWeaponCollider()
+    {
+        return weaponCollider;
     }
 
     // Method helper

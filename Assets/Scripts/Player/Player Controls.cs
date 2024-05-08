@@ -162,6 +162,89 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Inventory"",
+            ""id"": ""69f8ca4b-1128-4c5b-9767-bb9f55a3a9a6"",
+            ""actions"": [
+                {
+                    ""name"": ""SwitchActiveBag"",
+                    ""type"": ""Button"",
+                    ""id"": ""77737409-087d-47e1-9416-ff2f867e285c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""002ea457-54e0-4e30-8df2-f44816ef073a"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchActiveBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""277601fe-0ca7-41b7-8145-691d2a464b4f"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale"",
+                    ""groups"": """",
+                    ""action"": ""SwitchActiveBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5183bfc4-e619-45d6-ba1c-c304b7c6e550"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""SwitchActiveBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb89bf9b-ec24-4604-8df0-91d33d306d8b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": """",
+                    ""action"": ""SwitchActiveBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30d402ff-9860-4df3-bb6c-60b243c017fe"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": """",
+                    ""action"": ""SwitchActiveBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c64ecc8-d405-4c90-ab88-22565746eeeb"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=5)"",
+                    ""groups"": """",
+                    ""action"": ""SwitchActiveBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -174,6 +257,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Action = asset.FindActionMap("Action", throwIfNotFound: true);
         m_Action_Attack = m_Action.FindAction("Attack", throwIfNotFound: true);
         m_Action_Dash = m_Action.FindAction("Dash", throwIfNotFound: true);
+        // Inventory
+        m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
+        m_Inventory_SwitchActiveBag = m_Inventory.FindAction("SwitchActiveBag", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +425,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public ActionActions @Action => new ActionActions(this);
+
+    // Inventory
+    private readonly InputActionMap m_Inventory;
+    private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
+    private readonly InputAction m_Inventory_SwitchActiveBag;
+    public struct InventoryActions
+    {
+        private @PlayerControls m_Wrapper;
+        public InventoryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SwitchActiveBag => m_Wrapper.m_Inventory_SwitchActiveBag;
+        public InputActionMap Get() { return m_Wrapper.m_Inventory; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+        public void AddCallbacks(IInventoryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
+            @SwitchActiveBag.started += instance.OnSwitchActiveBag;
+            @SwitchActiveBag.performed += instance.OnSwitchActiveBag;
+            @SwitchActiveBag.canceled += instance.OnSwitchActiveBag;
+        }
+
+        private void UnregisterCallbacks(IInventoryActions instance)
+        {
+            @SwitchActiveBag.started -= instance.OnSwitchActiveBag;
+            @SwitchActiveBag.performed -= instance.OnSwitchActiveBag;
+            @SwitchActiveBag.canceled -= instance.OnSwitchActiveBag;
+        }
+
+        public void RemoveCallbacks(IInventoryActions instance)
+        {
+            if (m_Wrapper.m_InventoryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInventoryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InventoryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InventoryActions @Inventory => new InventoryActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -348,5 +480,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+    }
+    public interface IInventoryActions
+    {
+        void OnSwitchActiveBag(InputAction.CallbackContext context);
     }
 }
