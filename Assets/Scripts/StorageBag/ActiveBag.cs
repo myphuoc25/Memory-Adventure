@@ -58,6 +58,8 @@ public class ActiveBag : MonoBehaviour
 
         GameObject weaponSlot = transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo.weaponPrefab;
         GameObject newWeapon = Instantiate(weaponSlot, ActiveWeapon.Instance.transform.position, Quaternion.identity);
+
+        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, 0);
         newWeapon.transform.SetParent(ActiveWeapon.Instance.transform);
         
         ActiveWeapon.Instance.NewWeapon(newWeapon.GetComponent<MonoBehaviour>());

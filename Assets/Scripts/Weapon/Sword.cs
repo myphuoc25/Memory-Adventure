@@ -5,10 +5,14 @@ public class Sword : MonoBehaviour, IWeapon
 {
     [SerializeField] private GameObject slashAnimationPrefab; // This is the slash animation prefab
     [SerializeField] private Transform slashPoint; // This is the spawn point where the slash animation will be instantiated
+    [SerializeField] private WeaponInfo weaponInfo;
 
     private Transform weaponCollider; // This is the collider of the weapon
     private Animator animator;
     private GameObject slashAnimation; // This is the instantiated slash animation
+    
+
+    public WeaponInfo GetWeaponInfo() => weaponInfo;
 
     private void Awake()
     {
@@ -23,7 +27,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     private void Update()
     {
-        FlipSword();
+        FlipItem();
     }
 
     public void Attack()
@@ -33,13 +37,6 @@ public class Sword : MonoBehaviour, IWeapon
 
         slashAnimation = Instantiate(slashAnimationPrefab, slashPoint.position, Quaternion.identity); // instantiate the slash animation at the slash point and set its rotation to the identity quaternion
         slashAnimation.transform.SetParent(slashPoint.parent); // set the slash animation's parent to the slash point's parent. This is done so that the slash animation will follow the player's movement
-        StartCoroutine(AttackCDRoutine()); // start the attack cooldown routine
-    }
-
-    private IEnumerator AttackCDRoutine()
-    {
-        yield return new WaitForSeconds(0.5f);
-        ActiveWeapon.Instance.ToggleIsAttacking(false);
     }
 
     public void DoneAttackingAnimation()
@@ -68,7 +65,7 @@ public class Sword : MonoBehaviour, IWeapon
         }
     }
 
-    private void FlipSword()
+    public void FlipItem()
     {
         // Get the mouse position
         Vector3 mousePos = Input.mousePosition;

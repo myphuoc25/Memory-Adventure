@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class DamgeWeapon : MonoBehaviour
 {
-    [SerializeField] private int damage = 1;
+    private int damageAmount;
+
+    private void Start()
+    {
+        MonoBehaviour currentActiveWeapon = ActiveWeapon.Instance.CurrentActiveWeapon;
+        damageAmount = currentActiveWeapon.GetComponent<IWeapon>().GetWeaponInfo().weaponDamage;
+    }
 
     /// <summary>
     /// Active when the weapon collides with an enemy
@@ -15,7 +21,7 @@ public class DamgeWeapon : MonoBehaviour
         var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
-            enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(damageAmount);
         }
     }
 }

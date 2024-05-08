@@ -8,7 +8,7 @@ using UnityEngine;
 /// Unity sẽ tạo một đối tượng WeaponInfo mới với tên "WeaponInfo" và đặt nó trong thư mục được chọn.
 /// </summary>
 /// <remarks>
-/// Đây là một class chứa thông tin về vũ khí, bao gồm tên, prefab, 
+/// Đây là một class chứa thông tin về vũ khí, bao gồm tên prefab, 
 /// và thời gian cooldown giữa các lần bắn.
 /// </remarks>
 [CreateAssetMenu(fileName = "WeaponInfo", menuName = "New Weapon")]
@@ -17,4 +17,6 @@ public class WeaponInfo : ScriptableObject
     
     public GameObject weaponPrefab;
     public float weaponCooldown;
+    public int weaponDamage;
+    public float weaponRange;
 }

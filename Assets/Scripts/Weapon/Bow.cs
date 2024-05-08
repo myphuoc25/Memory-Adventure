@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour, IWeapon
 {
+    [SerializeField] private WeaponInfo weaponInfo; 
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Transform arrowSpawnPoint;
+
+    readonly int FIRE_HASH = Animator.StringToHash("Fire");
+
+    private Animator animator;
+
+    public void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void Attack()
     {
-        Debug.Log("Bow Attack");
-        StartCoroutine(AttackCDRoutine()); // start the attack cooldown routine
+        animator.SetTrigger(FIRE_HASH);
+        GameObject newArrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, ActiveWeapon.Instance.transform.rotation);
+        newArrow.GetComponent<Projectile>().UpdateWeaponInfo(weaponInfo);
     }
 
-    private IEnumerator AttackCDRoutine()
-    {
-        yield return new WaitForSeconds(0.5f);
-        ActiveWeapon.Instance.ToggleIsAttacking(false);
-    }
-
-    private void Awake()
-    {
-    }
-
-    public void Start()
-    {
-    }
-
-    private void Update()
-    {
-    }
-
+    public WeaponInfo GetWeaponInfo() => weaponInfo;
 }

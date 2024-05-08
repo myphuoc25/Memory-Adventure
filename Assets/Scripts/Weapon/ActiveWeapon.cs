@@ -49,24 +49,25 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         if(attackButtonPressed && !isAttacking)
         {
             isAttacking = true;
+            AttackCooldown();
             (CurrentActiveWeapon as IWeapon).Attack();
         }
     }
 
     public void DestroyCurrentWeapon()
     {
-        Debug.Log("Current weapon: " + CurrentActiveWeapon);
         if (CurrentActiveWeapon != null)
         {
             Destroy(CurrentActiveWeapon.gameObject);
-            Debug.Log("Destroying current weapon");
         }
     }
 
     public void NewWeapon(MonoBehaviour newWeapon)
     {
-        Debug.Log("New Weapon: " + newWeapon);
         CurrentActiveWeapon = newWeapon;
+
+        AttackCooldown();
+        timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
 
     }
 
