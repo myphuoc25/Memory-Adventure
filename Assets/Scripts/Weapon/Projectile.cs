@@ -9,16 +9,25 @@ public class Projectile : MonoBehaviour
 
     private WeaponInfo weaponInfo;
     private Vector3 startPosition;
+    private Vector3 moveDirection;
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
         startPosition = transform.position;
+        moveDirection = transform.right;
     }
 
     private void Update()
     {
         // Move the projectile
-        transform.Translate(moveSpeed * Time.deltaTime * Vector3.right);
+        //transform.Translate(moveSpeed * Time.deltaTime * moveDirection);
+        rb.velocity = moveSpeed * moveDirection;
         // Check if the projectile exceeds the weapon range
         DetectFireDistance();
     }
@@ -32,9 +41,11 @@ public class Projectile : MonoBehaviour
             // Deal damage to the enemy
             enemyHealth.TakeDamage(weaponInfo.weaponDamage);
             // Init animation for the enemy
-            Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+            var animationHit = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
             // Destroy the projectile
             Destroy(gameObject);
+            // Destroy the hit VFX after 2 seconds
+            Destroy(animationHit, 2);
         }
     }
 

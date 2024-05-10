@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -35,10 +33,13 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             // Instantiate death VFX in the position of the enemy when it dies
-            Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            var animationDeath = Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
 
             // Destroy the enemy current gameObject
             Destroy(gameObject);
+
+            // Destroy the death VFX after 2 seconds
+            Destroy(animationDeath, 2);
         }
     }
 

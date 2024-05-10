@@ -2,6 +2,7 @@
 {
     public enum StateEnemy
     {
+        Entry,
         Roaming
     }
 }

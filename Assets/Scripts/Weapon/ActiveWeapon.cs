@@ -5,7 +5,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 {
     public MonoBehaviour CurrentActiveWeapon { get; private set; }
 
-    private bool attackButtonPressed, isAttacking = false;
+    public bool attackButtonPressed, isAttacking = false;
     private PlayerControls playerControls;
     private float timeBetweenAttacks;
 
@@ -14,6 +14,8 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         base.Awake();
 
         playerControls = new PlayerControls();
+
+        
     }
 
     private void OnEnable()
@@ -68,7 +70,6 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
         AttackCooldown();
         timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
-
     }
 
     public void WeaponNull()

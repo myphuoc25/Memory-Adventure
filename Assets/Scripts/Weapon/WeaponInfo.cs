@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponInfo", menuName = "New Weapon")]
 public class WeaponInfo : ScriptableObject
 {
-    
     public GameObject weaponPrefab;
     public float weaponCooldown;
     public int weaponDamage;
