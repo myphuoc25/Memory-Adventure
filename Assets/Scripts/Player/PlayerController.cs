@@ -16,7 +16,7 @@ public class PlayerController : Singleton<PlayerController>
     private PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
-
+    private KnockBack knockBack;
     private Animator playerAnimator;
     private SpriteRenderer playerSprite;
     
@@ -28,6 +28,7 @@ public class PlayerController : Singleton<PlayerController>
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerSprite = GetComponent <SpriteRenderer>();
+        knockBack = GetComponent<KnockBack>();
     }
 
     private void OnEnable()
@@ -101,6 +102,11 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
+        if(knockBack.GettingKnockBack)
+        {
+            return;
+        }
+
         float currentMoveSpeed = moveSpeed;
 
         if (isBoosting)
