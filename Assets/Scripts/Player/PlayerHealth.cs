@@ -44,6 +44,15 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void DetectDeath()
+    {
+        if (currentHealth <= 0)
+        {
+            // Destroy the enemy current gameObject
+            Destroy(gameObject);
+        }
+    }
+
     private void TakeDamage(int damage)
     {
         canTakeDamage = false;

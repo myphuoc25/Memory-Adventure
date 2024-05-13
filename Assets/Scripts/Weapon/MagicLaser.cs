@@ -28,24 +28,6 @@ public class MagicLaser : MonoBehaviour
         StartCoroutine(IncreaseLaserLengthRoutine());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        Debug.Log("Hit enemy");
-        if (enemyHealth)
-        {
-            Debug.Log("Check health enemy");
-            // Deal damage to the enemy
-            //enemyHealth.TakeDamage(weaponInfo.weaponDamage);
-            // Init animation for the enemy
-            var animationHit = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
-            // Destroy the projectile
-            Destroy(gameObject);
-            // Destroy the hit VFX after 2 seconds
-            Destroy(animationHit, 2);
-        }
-    }
-
     private IEnumerator IncreaseLaserLengthRoutine()
     {
         float timePassed = 0f;

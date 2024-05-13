@@ -43,21 +43,13 @@ public class Pickup : MonoBehaviour
         rb.velocity = moveDir * moveSpeed * Time.deltaTime;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*if (collision.gameObject.CompareTag("Player"))
-        {
 
-            Debug.Log("Touching plsyer");
-            Destroy(gameObject);
-        }*/
-        //Destroy(gameObject);
-        Debug.Log("Touching plsyer");
-        Debug.Log(collision.gameObject.CompareTag("Player"));
-        if (collision.gameObject.GetComponent<PlayerController>())
+        // Check if the player is colliding with an enemy
+        if (collision.gameObject.CompareTag("Player"))
         {
-
-            Debug.Log("Destrou");
+            // Destroy coin
             Destroy(gameObject);
 
         }

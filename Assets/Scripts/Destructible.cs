@@ -8,11 +8,16 @@ public class Destructible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Check if the player is colliding with an enemy
         if (other.gameObject.GetComponent<DamgeWeapon>() || other.gameObject.GetComponent<Projectile>()) //
         {
             GetComponent<PickUpSpawner>().DropItems();
-            Instantiate(destroyVFX, transform.position, Quaternion.identity);
+            // Instantiate destroy VFX in the position of the destructible object when it dies
+            var animationDeath = Instantiate(destroyVFX, transform.position, Quaternion.identity);
+            // Destroy the destructible object
             Destroy(gameObject);
+            // Destroy the destroy VFX after 2 seconds
+            Destroy(animationDeath, 2);
         }
     }
 }
