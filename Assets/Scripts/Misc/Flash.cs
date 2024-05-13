@@ -8,12 +8,12 @@ public class Flash : MonoBehaviour
 
     private Material defaultMaterialRef;
     private SpriteRenderer spriteRenderer;
-    private EnemyHealth enemyHealth;
+    //private EnemyHealth enemyHealth;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        enemyHealth = GetComponent<EnemyHealth>();
+        //enemyHealth = GetComponent<EnemyHealth>();
         defaultMaterialRef = spriteRenderer.material;
     }
 
@@ -29,7 +29,7 @@ public class Flash : MonoBehaviour
         spriteRenderer.material = defaultMaterialRef;
 
         // Check if the enemy is dead
-        enemyHealth.DetectDeath();
+        //enemyHealth.DetectDeath();
     }
 
 }

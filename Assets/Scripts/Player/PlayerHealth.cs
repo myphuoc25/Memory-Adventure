@@ -46,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void TakeDamage(int damage)
     {
+        ScreenShakeManager.Instance.ShakeScreen();
         canTakeDamage = false;
         currentHealth -= damage;
         knockBack.GetKnockBack(transform, knockBackThrust);
