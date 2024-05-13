@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1490770375175202578}
   - component: {fileID: 8081506986658263490}
   - component: {fileID: 8990332728408852683}
+  - component: {fileID: -5556747596056633786}
   m_Layer: 8
   m_Name: Arrow 1
   m_TagString: Boomerang
@@ -299,3 +300,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   hitVFXPrefab: {fileID: 3668113020376578696, guid: 593d7046c825a294582e697e8dee3d10, type: 3}
+--- !u!114 &-5556747596056633786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7524940805526990280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4854831513e724aa69e3b4feb7d6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bullet
+  m_Name: MagicLaser
   m_Shader: {fileID: -6465566751694194690, guid: 0415e96dc532464479e8798cba93287a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -55,5 +55,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 2.0321765, g: 8.325368, b: 13.766356, a: 0}
+    - _Color: {r: 0, g: 0.44390184, b: 3.4415905, a: 0}
   m_BuildTextureStacks: []

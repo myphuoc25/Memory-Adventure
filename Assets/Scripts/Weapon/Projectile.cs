@@ -35,7 +35,6 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-
         if (enemyHealth)
         {
             // Deal damage to the enemy
@@ -67,5 +66,10 @@ public class Projectile : MonoBehaviour
     public void UpdateWeaponInfo(WeaponInfo weaponInfo)
     {
         this.weaponInfo = weaponInfo;
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }

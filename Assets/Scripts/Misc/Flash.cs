@@ -5,6 +5,7 @@ public class Flash : MonoBehaviour
 {
     [SerializeField] private Material whiteFlashMaterial;
     [SerializeField] private float defaultMaterial = .2f;
+    [SerializeField] private float restoreDefaultMatTime = .2f;
 
     private Material defaultMaterialRef;
     private SpriteRenderer spriteRenderer;
@@ -13,8 +14,13 @@ public class Flash : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        enemyHealth = GetComponent<EnemyHealth>();
         defaultMaterialRef = spriteRenderer.material;
+        enemyHealth = GetComponent<EnemyHealth>();
+    }
+
+    public float GetRestoreMatTime()
+    {
+        return restoreDefaultMatTime;
     }
 
     public IEnumerator FlashRoutine()

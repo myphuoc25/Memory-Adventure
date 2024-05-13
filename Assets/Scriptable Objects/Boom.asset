@@ -15,4 +15,4 @@ MonoBehaviour:
   weaponPrefab: {fileID: 701222575100631657, guid: dad588021c3d9c640b3c6c9accfa6971, type: 3}
   weaponCooldown: 1.5
   weaponDamage: 2
-  weaponRange: 5
+  weaponRange: 15

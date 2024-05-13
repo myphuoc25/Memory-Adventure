@@ -768,8 +768,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52918b007b4c9de40a369dd59043a39a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteFlashMaterial: {fileID: 0}
+  whiteFlashMaterial: {fileID: 2100000, guid: ddfa67f1b1e1d7741a281dd025efa5b6, type: 2}
   defaultMaterial: 0.2
+  restoreDefaultMatTime: 0.2
 --- !u!4 &942153480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8805944211459416309, guid: 8b214cb058a3d534db3751ee6b2cc196, type: 3}
@@ -8811,7 +8812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1632711435897671164, guid: 9eeb4301354ca0540bc17db790dc433e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673066304120624834, guid: 9eeb4301354ca0540bc17db790dc433e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9046,6 +9047,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 339980503423837401, guid: f624fb557b80cc243a2c347485fbfb7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7199999
+      objectReference: {fileID: 0}
+    - target: {fileID: 339980503423837401, guid: f624fb557b80cc243a2c347485fbfb7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17999999
+      objectReference: {fileID: 0}
     - target: {fileID: 824623273291573080, guid: f624fb557b80cc243a2c347485fbfb7a, type: 3}
       propertyPath: m_Name
       value: Camera

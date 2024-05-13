@@ -49,7 +49,7 @@ public class ActiveBag : MonoBehaviour
         ActiveWeapon.Instance.DestroyCurrentWeapon();
 
         // If the active slot is empty, return
-        if (!transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>())
+        if (transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo == null)
         {
             Debug.Log("No weapon in this slot");
             ActiveWeapon.Instance.WeaponNull();

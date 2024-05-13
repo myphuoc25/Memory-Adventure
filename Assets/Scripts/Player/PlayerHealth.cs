@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth; // current health
     private KnockBack knockBack; // reference to KnockBack script
     private Flash flash; // reference to Flash script
-    private bool isInvulnerable = false; //determine if the player is invulnerable
+    //private bool isInvulnerable = false; //determine if the player is invulnerable
     private bool canTakeDamage = true; //determine if the player can take damage
 
     private void Awake()

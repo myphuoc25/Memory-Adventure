@@ -1,16 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Staff : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
+    [SerializeField] private GameObject magicLaserPrefab;
+    [SerializeField] private Transform magicLaserSpawnPoint;
+
+    private Animator Animator;
+
+    private readonly int AttackHash = Animator.StringToHash("attack");
+
+    private void Awake()
+    {
+        Animator = GetComponent<Animator>();
+    }
 
     public WeaponInfo GetWeaponInfo() => weaponInfo;
 
     public void Attack()
     {
-        Debug.Log("Staff Attack");
+        Animator.SetTrigger(AttackHash);
+        SpawnMagicLaser();
+    }
+
+    public void SpawnMagicLaser()
+    {
+        // Spawn the magic laser
+        GameObject newLaser = Instantiate(magicLaserPrefab, magicLaserSpawnPoint.position, Quaternion.identity);
+        newLaser.GetComponent<MagicLaser>().UpdateLaserRange(weaponInfo.weaponRange);
     }
 
     private void Update()
