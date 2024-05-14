@@ -117,7 +117,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00047305226, y: 0.050031513}
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410a62a5b20127041a61aee37c39d051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpType: 1
   pickUpDistance: 4
   accelartionRate: 0.4
   moveSpeed: 2
