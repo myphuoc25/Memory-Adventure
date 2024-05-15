@@ -32,10 +32,10 @@ public class PlayerHealth : MonoBehaviour
         EnemyAI enemy = collision.gameObject.GetComponent<EnemyAI>();
 
         // If the player is colliding with an enemy and can take damage
-        if (enemy && canTakeDamage)
+        if (enemy)
         {
             // Take damage
-            TakeDamage(1);
+            TakeDamage(1, transform);
             // Knock back the player
             knockBack.GetKnockBack(collision.gameObject.transform, knockBackThrust);
             // Flash the player
@@ -53,12 +53,26 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damage)
+    /// <summary>
+    /// Take damage from the enemy
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <param name="hitTransform"></param>
+    public void TakeDamage(int damage, Transform hitTransform)
     {
+        // If the player can't take damage, return
+        if (!canTakeDamage) return;
+        // Knock back the player
+        knockBack.GetKnockBack(hitTransform, knockBackThrust);
+        // Flash the player
+        StartCoroutine(flash.FlashRoutine());
+        // Set the player to invulnerable
         canTakeDamage = false;
+        // Take damage from the enemy 
         currentHealth -= damage;
-        knockBack.GetKnockBack(transform, knockBackThrust);
+        // Check if the player is dead
         StartCoroutine(DamageRecoveryRoutine());
+        
     }
 
     private IEnumerator DamageRecoveryRoutine()

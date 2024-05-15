@@ -9,13 +9,11 @@ public class Flash : MonoBehaviour
 
     private Material defaultMaterialRef;
     private SpriteRenderer spriteRenderer;
-    private EnemyHealth enemyHealth;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMaterialRef = spriteRenderer.material;
-        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     public float GetRestoreMatTime()
@@ -33,9 +31,6 @@ public class Flash : MonoBehaviour
 
         // Return the enemy to its original color
         spriteRenderer.material = defaultMaterialRef;
-
-        // Check if the enemy is dead
-        enemyHealth.DetectDeath();
     }
 
 }

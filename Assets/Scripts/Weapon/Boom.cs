@@ -11,8 +11,7 @@ public class Boom : MonoBehaviour, IWeapon
     public void Attack()
     {
         GameObject newBoomerang = Instantiate(boomPrefab, boomSpawnPoint.position, ActiveWeapon.Instance.transform.rotation);
-        newBoomerang.GetComponent<Projectile>().UpdateWeaponInfo(weaponInfo);
-        Debug.Log("Boom");
+        newBoomerang.GetComponent<Projectile>().UpdateProjectileRange(weaponInfo.weaponRange);
     }
 
     public WeaponInfo GetWeaponInfo()

@@ -15,10 +15,10 @@ TagManager:
   - UI
   - Obstacle
   - Player
-  - 
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - Enemy
+  - Ground
+  - EnemyDetectionZone
   - 
   - 
   - 

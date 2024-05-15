@@ -6,11 +6,14 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject hitVFXPrefab;
+    [SerializeField] private bool isEnemyPojectle = false; // Determine if the projectile is from the enemy
 
-    private WeaponInfo weaponInfo;
+    //private WeaponInfo weaponInfo;
     private Vector3 startPosition;
     private Vector3 moveDirection;
     private Rigidbody2D rb;
+    private float projectileRange = 10f;
+    
 
     private void Awake()
     {
@@ -32,20 +35,28 @@ public class Projectile : MonoBehaviour
         DetectFireDistance();
     }
 
+    public void UpdateProjectileRange(float projectileRange)
+    {
+        this.projectileRange = projectileRange;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth)
-        {
-            // Deal damage to the enemy
-            enemyHealth.TakeDamage(weaponInfo.weaponDamage);
-            // Init animation for the enemy
-            var animationHit = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
-            // Destroy the projectile
-            Destroy(gameObject);
-            // Destroy the hit VFX after 2 seconds
-            Destroy(animationHit, 2);
-        }
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+            if((playerHealth && isEnemyPojectle) && collision.CompareTag("Player"))
+            {
+                playerHealth?.TakeDamage(1, transform);
+                var animationHit = Instantiate(hitVFXPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
+                Destroy(animationHit, 2);
+            } else if (!collision.isTrigger)
+            {
+                var animationHit = Instantiate(hitVFXPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
+                Destroy(animationHit, 2);
+            }
+        
     }
 
     /// <summary>
@@ -53,19 +64,10 @@ public class Projectile : MonoBehaviour
     /// </summary>
     private void DetectFireDistance()
     {
-        if(Vector3.Distance(startPosition, transform.position) > weaponInfo.weaponRange)
+        if(Vector3.Distance(transform.position, startPosition) > projectileRange)
         {
             Destroy(gameObject);
         }
-    }
-
-    /// <summary>
-    /// Update the weapon info of the projectile
-    /// </summary>
-    /// <param name="weaponInfo"></param>
-    public void UpdateWeaponInfo(WeaponInfo weaponInfo)
-    {
-        this.weaponInfo = weaponInfo;
     }
 
     public void DestroyObject()

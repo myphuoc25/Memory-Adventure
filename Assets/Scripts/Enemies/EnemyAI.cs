@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] private float roamChangeDirFloat = 2f;
+    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private MonoBehaviour enemyType;
+    [SerializeField] private float attackCoolDown = 2f;
+    [SerializeField] private bool stopMovingWhiteAttacking = false;
+
     private StateEnemy currentState;
     private EnemyPathFinding pathFinding;
+    private bool canAttack = true;
+    private Vector2 roamPosition;
+    private float timeRoaming = 0;
 
     public void Awake()
     {
@@ -16,21 +25,77 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(RoamingRoutine());
+        roamPosition = GetRoamingPosition();
     }
 
-    private IEnumerator RoamingRoutine()
+    private void Update()
     {
-        while(currentState == StateEnemy.Roaming)
+        MovementStateControl();
+    }
+
+    private void MovementStateControl()
+    {
+        switch(currentState)
         {
-            Vector2 roamPosition = GetRoamingPosition();
-            pathFinding.MoveTo(roamPosition);
-            yield return new WaitForSeconds(2f);
+            default:
+            case StateEnemy.Roaming:
+                Roaming();
+            break;
+            case StateEnemy.Attacking:
+                Attacking();
+            break;
         }
+    }
+
+    private void Roaming()
+    {
+        timeRoaming += Time.deltaTime;
+
+        pathFinding.MoveTo(roamPosition);
+
+        if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
+        {
+            currentState = StateEnemy.Attacking;
+        }
+
+        if (timeRoaming > roamChangeDirFloat)
+        {
+            roamPosition = GetRoamingPosition();
+        }
+    }
+
+    private void Attacking()
+    {
+        if(Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > attackRange)
+        {
+            currentState = StateEnemy.Roaming;
+        }
+
+        if (attackRange != 0 && canAttack){
+            canAttack = false;
+            (enemyType as IEnemy).Attack();
+
+            if(stopMovingWhiteAttacking)
+            {
+                pathFinding.StopMoving();
+            } else
+            {
+                pathFinding.MoveTo(roamPosition);
+            }
+
+            StartCoroutine(AttackCoolDown());
+        }
+    }
+
+    private IEnumerator AttackCoolDown()
+    {
+        yield return new WaitForSeconds(attackCoolDown);
+        canAttack = true;
     }
 
     private Vector2 GetRoamingPosition()
     {
+        timeRoaming = 0f;
         return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
