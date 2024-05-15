@@ -78,5 +78,10 @@ public class CompanisionAI : MonoBehaviour
         }
     }
 
+    private void FindEnemy()
+    {
+
+    }
+
 
 }
