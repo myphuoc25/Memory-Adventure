@@ -67,9 +67,13 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     public void NewWeapon(MonoBehaviour newWeapon)
     {
         CurrentActiveWeapon = newWeapon;
-
         AttackCooldown();
         timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
+
+        //Debug.Log(GameObject.FindGameObjectWithTag("Weapon"));
+        //GameObject prefab = Resources.Load<GameObject>("Prefabs/Weapons/" + CurrentActiveWeapon.name);
+        //GameObject[] prefabs = Resources.LoadAll<GameObject>("/Assets/Prefabs");
+        //Debug.Log(prefabs.Length);
     }
 
     public void WeaponNull()
