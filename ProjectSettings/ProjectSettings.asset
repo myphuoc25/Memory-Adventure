@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Memory Adventure
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 8467a470c95b6ac4482a2b7ec6abb3f0, type: 3}
   cursorHotspot: {x: 128, y: 128}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
