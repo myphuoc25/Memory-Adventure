@@ -4,5 +4,4 @@ using UnityEngine;
 
 public interface ICompanision
 {
-    bool ReachedEndOfPath { get; set; }
 }

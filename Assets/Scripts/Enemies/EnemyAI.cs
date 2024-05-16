@@ -19,9 +19,6 @@ public class EnemyAI : MonoBehaviour
 
     private StateEnemy currentState;
     private EnemyPathFinding pathFinding;
-    private bool canAttack = true;
-    private Vector2 roamPosition;
-    private float timeRoaming = 0;
 
     public void Awake()
     {
@@ -81,7 +78,7 @@ public class EnemyAI : MonoBehaviour
             canAttack = false;
             (enemyType as IEnemy).Attack();
 
-            if(stopMovingWhiteAttacking)
+            if(stopMovingWhileAttacking)
             {
                 pathFinding.StopMoving();
             } else
@@ -95,7 +92,7 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator AttackCoolDown()
     {
-        yield return new WaitForSeconds(attackCoolDown);
+        yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
 
@@ -105,7 +102,7 @@ public class EnemyAI : MonoBehaviour
         return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
-    private void Attacking()
+ /*   private void Attacking()
     {
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) > attackRange)
         {
@@ -129,7 +126,7 @@ public class EnemyAI : MonoBehaviour
 
             StartCoroutine(AttackCooldownRoutine());
         }
-    }
+    }*/
 
     private IEnumerator AttackCooldownRoutine()
     {
