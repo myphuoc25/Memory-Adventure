@@ -13,8 +13,13 @@ public class CompanisionAI : MonoBehaviour
     private Path path;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private bool reachedEndOfPath = false;
-    private Coroutine moveCoroutine;
+    //private bool walking = false;
+    //private Coroutine moveCoroutine;
+    public Animator animator;
+
+    [SerializeField] private int currentWaypoint = 0;
+
+    [SerializeField] public bool reachedEndOfPath { get; set; } = false;
 
     private void Start()
     {
@@ -22,7 +27,8 @@ public class CompanisionAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+        animator = GetComponent<Animator>();
+
         InvokeRepeating("CalculatePath", 0f, .5f);
     }
 
@@ -43,14 +49,67 @@ public class CompanisionAI : MonoBehaviour
         if (!p.error)
         {
             path = p;
-            MoveToTarget();
+            currentWaypoint = 0;
         }
     }
 
-    void MoveToTarget()
+    private void Update()
+    {
+        if (path == null || reachedEndOfPath)
+        {
+            return;
+        }
+
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            animator.SetBool("walk", false);
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
+        animator.SetBool("walk", true);
+        // Move the companion to the target
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        // Calculate the force to move the companion
+        Vector2 force = moveSpeed * Time.fixedDeltaTime * direction;
+        // Move the companion
+        rb.MovePosition(rb.position + force);
+        // Calculate the distance between the companion and the target
+        rb.AddForce(force);
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+        // Flip the sprite
+        if (direction.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        } else if (direction.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        // If the distance between the companion and the target is less than the next waypoint distance
+        if (distance < nextWaypointDistance)
+            currentWaypoint++;
+
+        
+    }
+
+    
+
+
+}
+
+
+/*void MoveToTarget()
     {
         if (moveCoroutine != null) StopCoroutine(moveCoroutine);
         moveCoroutine = StartCoroutine(MoveToTargetCoroutine());
+    }
+
+    private void Update()
+    {
     }
 
     IEnumerator MoveToTargetCoroutine()
@@ -59,7 +118,6 @@ public class CompanisionAI : MonoBehaviour
 
         while (currentWP < path.vectorPath.Count - 1)
         {
-
             Vector2 direction = ((Vector2)path.vectorPath[currentWP] - rb.position).normalized;
             Vector2 force = direction * moveSpeed * Time.deltaTime;
             transform.position += (Vector3)force;
@@ -75,13 +133,10 @@ public class CompanisionAI : MonoBehaviour
                     spriteRenderer.transform.localScale = new Vector3(1, 1, 0);
 
             yield return null;
+
+            animator.SetFloat("walk", path.vectorPath.Count - 1 - currentWP);
         }
-    }
-
-    private void FindEnemy()
-    {
-
-    }
 
 
-}
+        
+    }*/

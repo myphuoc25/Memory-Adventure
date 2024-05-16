@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -19,7 +20,9 @@ public class PlayerController : Singleton<PlayerController>
     private KnockBack knockBack;
     private Animator playerAnimator;
     private SpriteRenderer playerSprite;
-    
+    private CompanisionAI companionAI;
+    private CompanisionHealth companionHealth;
+    [SerializeField] public List<CompanisionAI> list = new List<CompanisionAI>();
 
     protected override void Awake()
     {
@@ -29,6 +32,9 @@ public class PlayerController : Singleton<PlayerController>
         playerAnimator = GetComponent<Animator>();
         playerSprite = GetComponent <SpriteRenderer>();
         knockBack = GetComponent<KnockBack>();
+        companionAI = FindObjectOfType<CompanisionAI>();
+        companionHealth = FindObjectOfType<CompanisionHealth>();
+        list = new List<CompanisionAI>(FindObjectsOfType<CompanisionAI>());
     }
 
     private void OnEnable()
@@ -76,6 +82,13 @@ public class PlayerController : Singleton<PlayerController>
             isBoosting = true;
         }
         playerControls.Movement.Behaviour.canceled += _ => isBoosting = false;
+        //companionHealth.DetectDeath();
+        if (movement != Vector2.zero && !companionHealth.isDead)
+        {
+
+            companionAI.reachedEndOfPath = false;
+            companionAI.animator.SetBool("walk", true);
+        }
     }
 
     private void StateDirection()
