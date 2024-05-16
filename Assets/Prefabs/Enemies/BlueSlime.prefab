@@ -166,6 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741bb04f00c14a24fbd46700b378daee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamChangeDirFloat: 2
+  attackRange: 0
+  enemyType: {fileID: 0}
+  attackCooldown: 2
+  stopMovingWhileAttacking: 0
 --- !u!114 &5796097996842963384
 MonoBehaviour:
   m_ObjectHideFlags: 0

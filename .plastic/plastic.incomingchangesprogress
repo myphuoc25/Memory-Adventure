@@ -1,0 +1,1228 @@
+[
+  {
+    "MountId": "56e62dd7-241f-41e9-8c6b-dd4ca4513e62",
+    "AncestorCsetIds": [
+      2
+    ],
+    "SourceCsetId": 5,
+    "DestinationCsetId": 2,
+    "FileConflicts": [
+      {
+        "Path": "/Packages/manifest.json",
+        "ItemId": 133,
+        "ParentItemId": 129,
+        "BaseRevId": 102,
+        "SourceRevId": 817,
+        "DestinationRevId": 102
+      },
+      {
+        "Path": "/Packages/packages-lock.json",
+        "ItemId": 134,
+        "ParentItemId": 129,
+        "BaseRevId": 103,
+        "SourceRevId": 818,
+        "DestinationRevId": 103
+      },
+      {
+        "Path": "/ProjectSettings/AudioManager.asset",
+        "ItemId": 135,
+        "ParentItemId": 131,
+        "BaseRevId": 104,
+        "SourceRevId": 819,
+        "DestinationRevId": 104
+      },
+      {
+        "Path": "/ProjectSettings/ClusterInputManager.asset",
+        "ItemId": 136,
+        "ParentItemId": 131,
+        "BaseRevId": 105,
+        "SourceRevId": 820,
+        "DestinationRevId": 105
+      },
+      {
+        "Path": "/ProjectSettings/DynamicsManager.asset",
+        "ItemId": 137,
+        "ParentItemId": 131,
+        "BaseRevId": 106,
+        "SourceRevId": 821,
+        "DestinationRevId": 106
+      },
+      {
+        "Path": "/ProjectSettings/EditorBuildSettings.asset",
+        "ItemId": 138,
+        "ParentItemId": 131,
+        "BaseRevId": 107,
+        "SourceRevId": 822,
+        "DestinationRevId": 107
+      },
+      {
+        "Path": "/ProjectSettings/EditorSettings.asset",
+        "ItemId": 139,
+        "ParentItemId": 131,
+        "BaseRevId": 108,
+        "SourceRevId": 823,
+        "DestinationRevId": 108
+      },
+      {
+        "Path": "/ProjectSettings/GraphicsSettings.asset",
+        "ItemId": 140,
+        "ParentItemId": 131,
+        "BaseRevId": 109,
+        "SourceRevId": 824,
+        "DestinationRevId": 109
+      },
+      {
+        "Path": "/ProjectSettings/InputManager.asset",
+        "ItemId": 141,
+        "ParentItemId": 131,
+        "BaseRevId": 110,
+        "SourceRevId": 825,
+        "DestinationRevId": 110
+      },
+      {
+        "Path": "/ProjectSettings/MemorySettings.asset",
+        "ItemId": 142,
+        "ParentItemId": 131,
+        "BaseRevId": 111,
+        "SourceRevId": 826,
+        "DestinationRevId": 111
+      },
+      {
+        "Path": "/ProjectSettings/NavMeshAreas.asset",
+        "ItemId": 143,
+        "ParentItemId": 131,
+        "BaseRevId": 112,
+        "SourceRevId": 827,
+        "DestinationRevId": 112
+      },
+      {
+        "Path": "/ProjectSettings/NetworkManager.asset",
+        "ItemId": 144,
+        "ParentItemId": 131,
+        "BaseRevId": 113,
+        "SourceRevId": 828,
+        "DestinationRevId": 113
+      },
+      {
+        "Path": "/ProjectSettings/PackageManagerSettings.asset",
+        "ItemId": 145,
+        "ParentItemId": 131,
+        "BaseRevId": 114,
+        "SourceRevId": 829,
+        "DestinationRevId": 114
+      },
+      {
+        "Path": "/ProjectSettings/Physics2DSettings.asset",
+        "ItemId": 146,
+        "ParentItemId": 131,
+        "BaseRevId": 115,
+        "SourceRevId": 830,
+        "DestinationRevId": 115
+      },
+      {
+        "Path": "/ProjectSettings/PresetManager.asset",
+        "ItemId": 147,
+        "ParentItemId": 131,
+        "BaseRevId": 116,
+        "SourceRevId": 831,
+        "DestinationRevId": 116
+      },
+      {
+        "Path": "/ProjectSettings/ProjectSettings.asset",
+        "ItemId": 148,
+        "ParentItemId": 131,
+        "BaseRevId": 117,
+        "SourceRevId": 832,
+        "DestinationRevId": 117
+      },
+      {
+        "Path": "/ProjectSettings/ProjectVersion.txt",
+        "ItemId": 149,
+        "ParentItemId": 131,
+        "BaseRevId": 118,
+        "SourceRevId": 833,
+        "DestinationRevId": 118
+      },
+      {
+        "Path": "/ProjectSettings/QualitySettings.asset",
+        "ItemId": 150,
+        "ParentItemId": 131,
+        "BaseRevId": 119,
+        "SourceRevId": 834,
+        "DestinationRevId": 119
+      },
+      {
+        "Path": "/ProjectSettings/SceneTemplateSettings.json",
+        "ItemId": 151,
+        "ParentItemId": 131,
+        "BaseRevId": 120,
+        "SourceRevId": 835,
+        "DestinationRevId": 120
+      },
+      {
+        "Path": "/ProjectSettings/TagManager.asset",
+        "ItemId": 152,
+        "ParentItemId": 131,
+        "BaseRevId": 121,
+        "SourceRevId": 836,
+        "DestinationRevId": 121
+      },
+      {
+        "Path": "/ProjectSettings/TimeManager.asset",
+        "ItemId": 153,
+        "ParentItemId": 131,
+        "BaseRevId": 122,
+        "SourceRevId": 837,
+        "DestinationRevId": 122
+      },
+      {
+        "Path": "/ProjectSettings/UnityConnectSettings.asset",
+        "ItemId": 154,
+        "ParentItemId": 131,
+        "BaseRevId": 123,
+        "SourceRevId": 838,
+        "DestinationRevId": 123
+      },
+      {
+        "Path": "/ProjectSettings/URPProjectSettings.asset",
+        "ItemId": 155,
+        "ParentItemId": 131,
+        "BaseRevId": 124,
+        "SourceRevId": 839,
+        "DestinationRevId": 124
+      },
+      {
+        "Path": "/ProjectSettings/VersionControlSettings.asset",
+        "ItemId": 156,
+        "ParentItemId": 131,
+        "BaseRevId": 125,
+        "SourceRevId": 840,
+        "DestinationRevId": 125
+      },
+      {
+        "Path": "/ProjectSettings/VFXManager.asset",
+        "ItemId": 157,
+        "ParentItemId": 131,
+        "BaseRevId": 126,
+        "SourceRevId": 841,
+        "DestinationRevId": 126
+      },
+      {
+        "Path": "/ProjectSettings/XRSettings.asset",
+        "ItemId": 158,
+        "ParentItemId": 131,
+        "BaseRevId": 127,
+        "SourceRevId": 842,
+        "DestinationRevId": 127
+      },
+      {
+        "Path": "/.vsconfig",
+        "ItemId": 312,
+        "ParentItemId": 2,
+        "BaseRevId": 159,
+        "SourceRevId": 508,
+        "DestinationRevId": 159
+      },
+      {
+        "Path": "/Assets/Animations/BlueSlime/BlueSlime.anim",
+        "ItemId": 402,
+        "ParentItemId": 338,
+        "BaseRevId": 160,
+        "SourceRevId": 511,
+        "DestinationRevId": 160
+      },
+      {
+        "Path": "/Assets/Animations/BlueSlime/BlueSlime.anim.meta",
+        "ItemId": 403,
+        "ParentItemId": 338,
+        "BaseRevId": 161,
+        "SourceRevId": 512,
+        "DestinationRevId": 161
+      },
+      {
+        "Path": "/Assets/Animations/BlueSlime/BlueSlime.controller",
+        "ItemId": 404,
+        "ParentItemId": 338,
+        "BaseRevId": 162,
+        "SourceRevId": 513,
+        "DestinationRevId": 162
+      },
+      {
+        "Path": "/Assets/Animations/BlueSlime/BlueSlime.controller.meta",
+        "ItemId": 405,
+        "ParentItemId": 338,
+        "BaseRevId": 163,
+        "SourceRevId": 514,
+        "DestinationRevId": 163
+      },
+      {
+        "Path": "/Assets/Animations/BlueSlime.meta",
+        "ItemId": 340,
+        "ParentItemId": 315,
+        "BaseRevId": 164,
+        "SourceRevId": 510,
+        "DestinationRevId": 164
+      },
+      {
+        "Path": "/Assets/Animations/Player/Idle.anim",
+        "ItemId": 406,
+        "ParentItemId": 341,
+        "BaseRevId": 165,
+        "SourceRevId": 516,
+        "DestinationRevId": 165
+      },
+      {
+        "Path": "/Assets/Animations/Player/Idle.anim.meta",
+        "ItemId": 407,
+        "ParentItemId": 341,
+        "BaseRevId": 166,
+        "SourceRevId": 517,
+        "DestinationRevId": 166
+      },
+      {
+        "Path": "/Assets/Animations/Player/Player.controller",
+        "ItemId": 408,
+        "ParentItemId": 341,
+        "BaseRevId": 167,
+        "SourceRevId": 518,
+        "DestinationRevId": 167
+      },
+      {
+        "Path": "/Assets/Animations/Player/Player.controller.meta",
+        "ItemId": 409,
+        "ParentItemId": 341,
+        "BaseRevId": 168,
+        "SourceRevId": 519,
+        "DestinationRevId": 168
+      },
+      {
+        "Path": "/Assets/Animations/Player/Running.anim",
+        "ItemId": 410,
+        "ParentItemId": 341,
+        "BaseRevId": 169,
+        "SourceRevId": 520,
+        "DestinationRevId": 169
+      },
+      {
+        "Path": "/Assets/Animations/Player/Running.anim.meta",
+        "ItemId": 411,
+        "ParentItemId": 341,
+        "BaseRevId": 170,
+        "SourceRevId": 521,
+        "DestinationRevId": 170
+      },
+      {
+        "Path": "/Assets/Animations/Player.meta",
+        "ItemId": 343,
+        "ParentItemId": 315,
+        "BaseRevId": 171,
+        "SourceRevId": 515,
+        "DestinationRevId": 171
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Entry.anim",
+        "ItemId": 412,
+        "ParentItemId": 344,
+        "BaseRevId": 172,
+        "SourceRevId": 523,
+        "DestinationRevId": 172
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Entry.anim.meta",
+        "ItemId": 413,
+        "ParentItemId": 344,
+        "BaseRevId": 173,
+        "SourceRevId": 524,
+        "DestinationRevId": 173
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Entry_Slash.anim",
+        "ItemId": 414,
+        "ParentItemId": 344,
+        "BaseRevId": 174,
+        "SourceRevId": 525,
+        "DestinationRevId": 174
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Entry_Slash.anim.meta",
+        "ItemId": 415,
+        "ParentItemId": 344,
+        "BaseRevId": 175,
+        "SourceRevId": 526,
+        "DestinationRevId": 175
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Slash.controller",
+        "ItemId": 416,
+        "ParentItemId": 344,
+        "BaseRevId": 176,
+        "SourceRevId": 527,
+        "DestinationRevId": 176
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Slash.controller.meta",
+        "ItemId": 417,
+        "ParentItemId": 344,
+        "BaseRevId": 177,
+        "SourceRevId": 528,
+        "DestinationRevId": 177
+      },
+      {
+        "Path": "/Assets/Animations/Sword/SwingDown.anim",
+        "ItemId": 418,
+        "ParentItemId": 344,
+        "BaseRevId": 178,
+        "SourceRevId": 529,
+        "DestinationRevId": 178
+      },
+      {
+        "Path": "/Assets/Animations/Sword/SwingDown.anim.meta",
+        "ItemId": 419,
+        "ParentItemId": 344,
+        "BaseRevId": 179,
+        "SourceRevId": 530,
+        "DestinationRevId": 179
+      },
+      {
+        "Path": "/Assets/Animations/Sword/SwingUp.anim",
+        "ItemId": 420,
+        "ParentItemId": 344,
+        "BaseRevId": 180,
+        "SourceRevId": 531,
+        "DestinationRevId": 180
+      },
+      {
+        "Path": "/Assets/Animations/Sword/SwingUp.anim.meta",
+        "ItemId": 421,
+        "ParentItemId": 344,
+        "BaseRevId": 181,
+        "SourceRevId": 532,
+        "DestinationRevId": 181
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Sword.controller",
+        "ItemId": 422,
+        "ParentItemId": 344,
+        "BaseRevId": 182,
+        "SourceRevId": 533,
+        "DestinationRevId": 182
+      },
+      {
+        "Path": "/Assets/Animations/Sword/Sword.controller.meta",
+        "ItemId": 423,
+        "ParentItemId": 344,
+        "BaseRevId": 183,
+        "SourceRevId": 534,
+        "DestinationRevId": 183
+      },
+      {
+        "Path": "/Assets/Animations/Sword.meta",
+        "ItemId": 346,
+        "ParentItemId": 315,
+        "BaseRevId": 184,
+        "SourceRevId": 522,
+        "DestinationRevId": 184
+      },
+      {
+        "Path": "/Assets/Animations.meta",
+        "ItemId": 317,
+        "ParentItemId": 313,
+        "BaseRevId": 185,
+        "SourceRevId": 509,
+        "DestinationRevId": 185
+      },
+      {
+        "Path": "/Assets/Materials/Particle.mat",
+        "ItemId": 347,
+        "ParentItemId": 318,
+        "BaseRevId": 186,
+        "SourceRevId": 536,
+        "DestinationRevId": 186
+      },
+      {
+        "Path": "/Assets/Materials/Particle.mat.meta",
+        "ItemId": 348,
+        "ParentItemId": 318,
+        "BaseRevId": 187,
+        "SourceRevId": 537,
+        "DestinationRevId": 187
+      },
+      {
+        "Path": "/Assets/Materials/WhiteFlash.mat",
+        "ItemId": 349,
+        "ParentItemId": 318,
+        "BaseRevId": 188,
+        "SourceRevId": 538,
+        "DestinationRevId": 188
+      },
+      {
+        "Path": "/Assets/Materials/WhiteFlash.mat.meta",
+        "ItemId": 350,
+        "ParentItemId": 318,
+        "BaseRevId": 189,
+        "SourceRevId": 539,
+        "DestinationRevId": 189
+      },
+      {
+        "Path": "/Assets/Materials.meta",
+        "ItemId": 320,
+        "ParentItemId": 313,
+        "BaseRevId": 190,
+        "SourceRevId": 535,
+        "DestinationRevId": 190
+      },
+      {
+        "Path": "/Assets/Prefabs/Bush1.prefab",
+        "ItemId": 353,
+        "ParentItemId": 321,
+        "BaseRevId": 193,
+        "SourceRevId": 541,
+        "DestinationRevId": 193
+      },
+      {
+        "Path": "/Assets/Prefabs/Bush1.prefab.meta",
+        "ItemId": 354,
+        "ParentItemId": 321,
+        "BaseRevId": 194,
+        "SourceRevId": 542,
+        "DestinationRevId": 194
+      },
+      {
+        "Path": "/Assets/Prefabs/SlashSword.prefab",
+        "ItemId": 357,
+        "ParentItemId": 321,
+        "BaseRevId": 197,
+        "SourceRevId": 543,
+        "DestinationRevId": 197
+      },
+      {
+        "Path": "/Assets/Prefabs/SlashSword.prefab.meta",
+        "ItemId": 358,
+        "ParentItemId": 321,
+        "BaseRevId": 198,
+        "SourceRevId": 544,
+        "DestinationRevId": 198
+      },
+      {
+        "Path": "/Assets/Prefabs/Tree1.prefab",
+        "ItemId": 361,
+        "ParentItemId": 321,
+        "BaseRevId": 201,
+        "SourceRevId": 545,
+        "DestinationRevId": 201
+      },
+      {
+        "Path": "/Assets/Prefabs/Tree1.prefab.meta",
+        "ItemId": 362,
+        "ParentItemId": 321,
+        "BaseRevId": 202,
+        "SourceRevId": 546,
+        "DestinationRevId": 202
+      },
+      {
+        "Path": "/Assets/Prefabs/Tree2.prefab",
+        "ItemId": 363,
+        "ParentItemId": 321,
+        "BaseRevId": 203,
+        "SourceRevId": 547,
+        "DestinationRevId": 203
+      },
+      {
+        "Path": "/Assets/Prefabs/Tree2.prefab.meta",
+        "ItemId": 364,
+        "ParentItemId": 321,
+        "BaseRevId": 204,
+        "SourceRevId": 548,
+        "DestinationRevId": 204
+      },
+      {
+        "Path": "/Assets/Prefabs/Tree3.prefab",
+        "ItemId": 365,
+        "ParentItemId": 321,
+        "BaseRevId": 205,
+        "SourceRevId": 549,
+        "DestinationRevId": 205
+      },
+      {
+        "Path": "/Assets/Prefabs/Tree3.prefab.meta",
+        "ItemId": 366,
+        "ParentItemId": 321,
+        "BaseRevId": 206,
+        "SourceRevId": 550,
+        "DestinationRevId": 206
+      },
+      {
+        "Path": "/Assets/Prefabs.meta",
+        "ItemId": 323,
+        "ParentItemId": 313,
+        "BaseRevId": 207,
+        "SourceRevId": 540,
+        "DestinationRevId": 207
+      },
+      {
+        "Path": "/Assets/Scenes/SampleScene.unity",
+        "ItemId": 367,
+        "ParentItemId": 324,
+        "BaseRevId": 208,
+        "SourceRevId": 552,
+        "DestinationRevId": 208
+      },
+      {
+        "Path": "/Assets/Scenes/SampleScene.unity.meta",
+        "ItemId": 368,
+        "ParentItemId": 324,
+        "BaseRevId": 209,
+        "SourceRevId": 553,
+        "DestinationRevId": 209
+      },
+      {
+        "Path": "/Assets/Scenes.meta",
+        "ItemId": 326,
+        "ParentItemId": 313,
+        "BaseRevId": 210,
+        "SourceRevId": 551,
+        "DestinationRevId": 210
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies/EnemyAI.cs",
+        "ItemId": 424,
+        "ParentItemId": 369,
+        "BaseRevId": 211,
+        "SourceRevId": 556,
+        "DestinationRevId": 211
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies/EnemyAI.cs.meta",
+        "ItemId": 425,
+        "ParentItemId": 369,
+        "BaseRevId": 212,
+        "SourceRevId": 557,
+        "DestinationRevId": 212
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies/EnemyHealth.cs",
+        "ItemId": 426,
+        "ParentItemId": 369,
+        "BaseRevId": 213,
+        "SourceRevId": 558,
+        "DestinationRevId": 213
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies/EnemyHealth.cs.meta",
+        "ItemId": 427,
+        "ParentItemId": 369,
+        "BaseRevId": 214,
+        "SourceRevId": 559,
+        "DestinationRevId": 214
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies/EnemyPathFinding.cs",
+        "ItemId": 428,
+        "ParentItemId": 369,
+        "BaseRevId": 215,
+        "SourceRevId": 560,
+        "DestinationRevId": 215
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies/EnemyPathFinding.cs.meta",
+        "ItemId": 429,
+        "ParentItemId": 369,
+        "BaseRevId": 216,
+        "SourceRevId": 561,
+        "DestinationRevId": 216
+      },
+      {
+        "Path": "/Assets/Scripts/Enemies.meta",
+        "ItemId": 371,
+        "ParentItemId": 327,
+        "BaseRevId": 217,
+        "SourceRevId": 555,
+        "DestinationRevId": 217
+      },
+      {
+        "Path": "/Assets/Scripts/Enums/StateEnemy.cs",
+        "ItemId": 430,
+        "ParentItemId": 372,
+        "BaseRevId": 218,
+        "SourceRevId": 563,
+        "DestinationRevId": 218
+      },
+      {
+        "Path": "/Assets/Scripts/Enums/StateEnemy.cs.meta",
+        "ItemId": 431,
+        "ParentItemId": 372,
+        "BaseRevId": 219,
+        "SourceRevId": 564,
+        "DestinationRevId": 219
+      },
+      {
+        "Path": "/Assets/Scripts/Enums.meta",
+        "ItemId": 374,
+        "ParentItemId": 327,
+        "BaseRevId": 220,
+        "SourceRevId": 562,
+        "DestinationRevId": 220
+      },
+      {
+        "Path": "/Assets/Scripts/Misc/Flash.cs",
+        "ItemId": 432,
+        "ParentItemId": 375,
+        "BaseRevId": 221,
+        "SourceRevId": 566,
+        "DestinationRevId": 221
+      },
+      {
+        "Path": "/Assets/Scripts/Misc/Flash.cs.meta",
+        "ItemId": 433,
+        "ParentItemId": 375,
+        "BaseRevId": 222,
+        "SourceRevId": 567,
+        "DestinationRevId": 222
+      },
+      {
+        "Path": "/Assets/Scripts/Misc/KnockBack.cs",
+        "ItemId": 434,
+        "ParentItemId": 375,
+        "BaseRevId": 223,
+        "SourceRevId": 568,
+        "DestinationRevId": 223
+      },
+      {
+        "Path": "/Assets/Scripts/Misc/KnockBack.cs.meta",
+        "ItemId": 435,
+        "ParentItemId": 375,
+        "BaseRevId": 224,
+        "SourceRevId": 569,
+        "DestinationRevId": 224
+      },
+      {
+        "Path": "/Assets/Scripts/Misc.meta",
+        "ItemId": 377,
+        "ParentItemId": 327,
+        "BaseRevId": 225,
+        "SourceRevId": 565,
+        "DestinationRevId": 225
+      },
+      {
+        "Path": "/Assets/Scripts/Player/Player Controls.cs",
+        "ItemId": 436,
+        "ParentItemId": 378,
+        "BaseRevId": 226,
+        "SourceRevId": 571,
+        "DestinationRevId": 226
+      },
+      {
+        "Path": "/Assets/Scripts/Player/Player Controls.cs.meta",
+        "ItemId": 437,
+        "ParentItemId": 378,
+        "BaseRevId": 227,
+        "SourceRevId": 572,
+        "DestinationRevId": 227
+      },
+      {
+        "Path": "/Assets/Scripts/Player/Player Controls.inputactions",
+        "ItemId": 438,
+        "ParentItemId": 378,
+        "BaseRevId": 228,
+        "SourceRevId": 573,
+        "DestinationRevId": 228
+      },
+      {
+        "Path": "/Assets/Scripts/Player/Player Controls.inputactions.meta",
+        "ItemId": 439,
+        "ParentItemId": 378,
+        "BaseRevId": 229,
+        "SourceRevId": 574,
+        "DestinationRevId": 229
+      },
+      {
+        "Path": "/Assets/Scripts/Player/PlayerController.cs",
+        "ItemId": 440,
+        "ParentItemId": 378,
+        "BaseRevId": 230,
+        "SourceRevId": 575,
+        "DestinationRevId": 230
+      },
+      {
+        "Path": "/Assets/Scripts/Player/PlayerController.cs.meta",
+        "ItemId": 441,
+        "ParentItemId": 378,
+        "BaseRevId": 231,
+        "SourceRevId": 576,
+        "DestinationRevId": 231
+      },
+      {
+        "Path": "/Assets/Scripts/Player.meta",
+        "ItemId": 380,
+        "ParentItemId": 327,
+        "BaseRevId": 232,
+        "SourceRevId": 570,
+        "DestinationRevId": 232
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/ActiveWeapon.cs",
+        "ItemId": 442,
+        "ParentItemId": 381,
+        "BaseRevId": 233,
+        "SourceRevId": 578,
+        "DestinationRevId": 233
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/ActiveWeapon.cs.meta",
+        "ItemId": 443,
+        "ParentItemId": 381,
+        "BaseRevId": 234,
+        "SourceRevId": 579,
+        "DestinationRevId": 234
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/DamgeWeapon.cs",
+        "ItemId": 444,
+        "ParentItemId": 381,
+        "BaseRevId": 235,
+        "SourceRevId": 580,
+        "DestinationRevId": 235
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/DamgeWeapon.cs.meta",
+        "ItemId": 445,
+        "ParentItemId": 381,
+        "BaseRevId": 236,
+        "SourceRevId": 581,
+        "DestinationRevId": 236
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/SlashAnimation.cs.meta",
+        "ItemId": 447,
+        "ParentItemId": 381,
+        "BaseRevId": 238,
+        "SourceRevId": 582,
+        "DestinationRevId": 238
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/Sword.cs",
+        "ItemId": 448,
+        "ParentItemId": 381,
+        "BaseRevId": 239,
+        "SourceRevId": 583,
+        "DestinationRevId": 239
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon/Sword.cs.meta",
+        "ItemId": 449,
+        "ParentItemId": 381,
+        "BaseRevId": 240,
+        "SourceRevId": 584,
+        "DestinationRevId": 240
+      },
+      {
+        "Path": "/Assets/Scripts/Weapon.meta",
+        "ItemId": 383,
+        "ParentItemId": 327,
+        "BaseRevId": 241,
+        "SourceRevId": 577,
+        "DestinationRevId": 241
+      },
+      {
+        "Path": "/Assets/Scripts.meta",
+        "ItemId": 329,
+        "ParentItemId": 313,
+        "BaseRevId": 242,
+        "SourceRevId": 554,
+        "DestinationRevId": 242
+      },
+      {
+        "Path": "/Assets/Settings/Lit2DSceneTemplate.scenetemplate",
+        "ItemId": 384,
+        "ParentItemId": 330,
+        "BaseRevId": 243,
+        "SourceRevId": 586,
+        "DestinationRevId": 243
+      },
+      {
+        "Path": "/Assets/Settings/Lit2DSceneTemplate.scenetemplate.meta",
+        "ItemId": 385,
+        "ParentItemId": 330,
+        "BaseRevId": 244,
+        "SourceRevId": 587,
+        "DestinationRevId": 244
+      },
+      {
+        "Path": "/Assets/Settings/Renderer2D.asset",
+        "ItemId": 386,
+        "ParentItemId": 330,
+        "BaseRevId": 245,
+        "SourceRevId": 588,
+        "DestinationRevId": 245
+      },
+      {
+        "Path": "/Assets/Settings/Renderer2D.asset.meta",
+        "ItemId": 387,
+        "ParentItemId": 330,
+        "BaseRevId": 246,
+        "SourceRevId": 589,
+        "DestinationRevId": 246
+      },
+      {
+        "Path": "/Assets/Settings/Scenes/URP2DSceneTemplate.unity",
+        "ItemId": 450,
+        "ParentItemId": 388,
+        "BaseRevId": 247,
+        "SourceRevId": 591,
+        "DestinationRevId": 247
+      },
+      {
+        "Path": "/Assets/Settings/Scenes/URP2DSceneTemplate.unity.meta",
+        "ItemId": 451,
+        "ParentItemId": 388,
+        "BaseRevId": 248,
+        "SourceRevId": 592,
+        "DestinationRevId": 248
+      },
+      {
+        "Path": "/Assets/Settings/Scenes.meta",
+        "ItemId": 390,
+        "ParentItemId": 330,
+        "BaseRevId": 249,
+        "SourceRevId": 590,
+        "DestinationRevId": 249
+      },
+      {
+        "Path": "/Assets/Settings/UniversalRP.asset",
+        "ItemId": 391,
+        "ParentItemId": 330,
+        "BaseRevId": 250,
+        "SourceRevId": 593,
+        "DestinationRevId": 250
+      },
+      {
+        "Path": "/Assets/Settings/UniversalRP.asset.meta",
+        "ItemId": 392,
+        "ParentItemId": 330,
+        "BaseRevId": 251,
+        "SourceRevId": 594,
+        "DestinationRevId": 251
+      },
+      {
+        "Path": "/Assets/Settings.meta",
+        "ItemId": 332,
+        "ParentItemId": 313,
+        "BaseRevId": 252,
+        "SourceRevId": 585,
+        "DestinationRevId": 252
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/Particle Sprite.png.meta",
+        "ItemId": 453,
+        "ParentItemId": 393,
+        "BaseRevId": 254,
+        "SourceRevId": 597,
+        "DestinationRevId": 254
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/shadowless/spr_Blue_slime_attack_shadowless.png.meta",
+        "ItemId": 491,
+        "ParentItemId": 454,
+        "BaseRevId": 256,
+        "SourceRevId": 599,
+        "DestinationRevId": 256
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/shadowless/spr_Blue_slime_hurt_shadowless.png.meta",
+        "ItemId": 493,
+        "ParentItemId": 454,
+        "BaseRevId": 258,
+        "SourceRevId": 600,
+        "DestinationRevId": 258
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/shadowless/spr_Blue_slime_idle_shadowless.png.meta",
+        "ItemId": 495,
+        "ParentItemId": 454,
+        "BaseRevId": 260,
+        "SourceRevId": 601,
+        "DestinationRevId": 260
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/shadowless/spr_Blue_slime_walk_shadowless.png.meta",
+        "ItemId": 497,
+        "ParentItemId": 454,
+        "BaseRevId": 262,
+        "SourceRevId": 602,
+        "DestinationRevId": 262
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/shadowless.meta",
+        "ItemId": 456,
+        "ParentItemId": 393,
+        "BaseRevId": 263,
+        "SourceRevId": 598,
+        "DestinationRevId": 263
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/spr_Blue_slime_attack.png.meta",
+        "ItemId": 458,
+        "ParentItemId": 393,
+        "BaseRevId": 265,
+        "SourceRevId": 603,
+        "DestinationRevId": 265
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/spr_Blue_slime_death.png.meta",
+        "ItemId": 460,
+        "ParentItemId": 393,
+        "BaseRevId": 267,
+        "SourceRevId": 604,
+        "DestinationRevId": 267
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/spr_Blue_slime_hurt.png.meta",
+        "ItemId": 462,
+        "ParentItemId": 393,
+        "BaseRevId": 269,
+        "SourceRevId": 605,
+        "DestinationRevId": 269
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/spr_Blue_slime_hurt_without_filter.png.meta",
+        "ItemId": 464,
+        "ParentItemId": 393,
+        "BaseRevId": 271,
+        "SourceRevId": 606,
+        "DestinationRevId": 271
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/spr_Blue_slime_idle.png.meta",
+        "ItemId": 466,
+        "ParentItemId": 393,
+        "BaseRevId": 273,
+        "SourceRevId": 607,
+        "DestinationRevId": 273
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime/spr_Blue_slime_walk.png.meta",
+        "ItemId": 468,
+        "ParentItemId": 393,
+        "BaseRevId": 275,
+        "SourceRevId": 608,
+        "DestinationRevId": 275
+      },
+      {
+        "Path": "/Assets/Sprites/Blue Slime.meta",
+        "ItemId": 395,
+        "ParentItemId": 333,
+        "BaseRevId": 276,
+        "SourceRevId": 596,
+        "DestinationRevId": 276
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Side animations/spr_player_right_attack.png.meta",
+        "ItemId": 499,
+        "ParentItemId": 469,
+        "BaseRevId": 278,
+        "SourceRevId": 611,
+        "DestinationRevId": 278
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Side animations/spr_player_right_hit.png.meta",
+        "ItemId": 501,
+        "ParentItemId": 469,
+        "BaseRevId": 280,
+        "SourceRevId": 612,
+        "DestinationRevId": 280
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Side animations/spr_player_right_idle 1.png.meta",
+        "ItemId": 503,
+        "ParentItemId": 469,
+        "BaseRevId": 282,
+        "SourceRevId": 613,
+        "DestinationRevId": 282
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Side animations/spr_player_right_idle.png.meta",
+        "ItemId": 505,
+        "ParentItemId": 469,
+        "BaseRevId": 284,
+        "SourceRevId": 614,
+        "DestinationRevId": 284
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Side animations/spr_player_right_walk.png.meta",
+        "ItemId": 507,
+        "ParentItemId": 469,
+        "BaseRevId": 286,
+        "SourceRevId": 615,
+        "DestinationRevId": 286
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Side animations.meta",
+        "ItemId": 471,
+        "ParentItemId": 396,
+        "BaseRevId": 287,
+        "SourceRevId": 610,
+        "DestinationRevId": 287
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Slash Effect.png.meta",
+        "ItemId": 473,
+        "ParentItemId": 396,
+        "BaseRevId": 289,
+        "SourceRevId": 616,
+        "DestinationRevId": 289
+      },
+      {
+        "Path": "/Assets/Sprites/Player/Sword.png.meta",
+        "ItemId": 475,
+        "ParentItemId": 396,
+        "BaseRevId": 291,
+        "SourceRevId": 617,
+        "DestinationRevId": 291
+      },
+      {
+        "Path": "/Assets/Sprites/Player.meta",
+        "ItemId": 398,
+        "ParentItemId": 333,
+        "BaseRevId": 292,
+        "SourceRevId": 609,
+        "DestinationRevId": 292
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/Bush.png.meta",
+        "ItemId": 477,
+        "ParentItemId": 399,
+        "BaseRevId": 294,
+        "SourceRevId": 630,
+        "DestinationRevId": 294
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/Bush1.png.meta",
+        "ItemId": 479,
+        "ParentItemId": 399,
+        "BaseRevId": 296,
+        "SourceRevId": 631,
+        "DestinationRevId": 296
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/spr_tree1.png.meta",
+        "ItemId": 481,
+        "ParentItemId": 399,
+        "BaseRevId": 298,
+        "SourceRevId": 632,
+        "DestinationRevId": 298
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/spr_tree2.png.meta",
+        "ItemId": 483,
+        "ParentItemId": 399,
+        "BaseRevId": 300,
+        "SourceRevId": 633,
+        "DestinationRevId": 300
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/spr_tree3.png.meta",
+        "ItemId": 485,
+        "ParentItemId": 399,
+        "BaseRevId": 302,
+        "SourceRevId": 634,
+        "DestinationRevId": 302
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/tree.png.meta",
+        "ItemId": 487,
+        "ParentItemId": 399,
+        "BaseRevId": 304,
+        "SourceRevId": 635,
+        "DestinationRevId": 304
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation/tree1.png.meta",
+        "ItemId": 489,
+        "ParentItemId": 399,
+        "BaseRevId": 306,
+        "SourceRevId": 636,
+        "DestinationRevId": 306
+      },
+      {
+        "Path": "/Assets/Sprites/Vegetation.meta",
+        "ItemId": 401,
+        "ParentItemId": 333,
+        "BaseRevId": 307,
+        "SourceRevId": 629,
+        "DestinationRevId": 307
+      },
+      {
+        "Path": "/Assets/Sprites.meta",
+        "ItemId": 335,
+        "ParentItemId": 313,
+        "BaseRevId": 308,
+        "SourceRevId": 595,
+        "DestinationRevId": 308
+      },
+      {
+        "Path": "/Assets/UniversalRenderPipelineGlobalSettings.asset",
+        "ItemId": 336,
+        "ParentItemId": 313,
+        "BaseRevId": 309,
+        "SourceRevId": 815,
+        "DestinationRevId": 309
+      },
+      {
+        "Path": "/Assets/UniversalRenderPipelineGlobalSettings.asset.meta",
+        "ItemId": 337,
+        "ParentItemId": 313,
+        "BaseRevId": 310,
+        "SourceRevId": 816,
+        "DestinationRevId": 310
+      },
+      {
+        "Path": "/Assets/Prefabs/Enemies/BlueSlime.prefab",
+        "ItemId": 351,
+        "ParentItemId": 2638,
+        "BaseRevId": 191,
+        "SourceRevId": 2051,
+        "DestinationRevId": 191
+      },
+      {
+        "Path": "/Assets/Prefabs/Enemies/BlueSlime.prefab.meta",
+        "ItemId": 352,
+        "ParentItemId": 2638,
+        "BaseRevId": 192,
+        "SourceRevId": 3747,
+        "DestinationRevId": 192
+      },
+      {
+        "Path": "/Assets/Prefabs/VFX/Brick VFX.prefab",
+        "ItemId": 355,
+        "ParentItemId": 2646,
+        "BaseRevId": 195,
+        "SourceRevId": 2066,
+        "DestinationRevId": 195
+      },
+      {
+        "Path": "/Assets/Prefabs/VFX/Death VFX.prefab.meta",
+        "ItemId": 356,
+        "ParentItemId": 2646,
+        "BaseRevId": 196,
+        "SourceRevId": 3748,
+        "DestinationRevId": 196
+      },
+      {
+        "Path": "/Assets/Prefabs/VFX/Barrel VFX.prefab",
+        "ItemId": 359,
+        "ParentItemId": 2646,
+        "BaseRevId": 199,
+        "SourceRevId": 2064,
+        "DestinationRevId": 199
+      },
+      {
+        "Path": "/Assets/Prefabs/VFX/Slime Death VFX.prefab.meta",
+        "ItemId": 360,
+        "ParentItemId": 2646,
+        "BaseRevId": 200,
+        "SourceRevId": 3749,
+        "DestinationRevId": 200
+      }
+    ]
+  }
+]

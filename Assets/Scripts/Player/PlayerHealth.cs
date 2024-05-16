@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Singleton<PlayerHealth>
 {
     [SerializeField] private int health = 5;
     [SerializeField] private float knockBackThrust = 15f; //xác định mức đẩy lùi khi kẻ địch bị tấn công. 
@@ -14,8 +14,9 @@ public class PlayerHealth : MonoBehaviour
     //private bool isInvulnerable = false; //determine if the player is invulnerable
     private bool canTakeDamage = true; //determine if the player can take damage
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         flash = GetComponent<Flash>();
         knockBack = GetComponent<KnockBack>();
     }
@@ -66,7 +67,16 @@ public class PlayerHealth : MonoBehaviour
         knockBack.GetKnockBack(hitTransform, knockBackThrust);
         // Flash the player
         StartCoroutine(flash.FlashRoutine());
-        // Set the player to invulnerable
+    }
+    
+    public void HealPlayer()
+    {
+        currentHealth += 1;
+    }
+
+    private void TakeDamage(int damage)
+    {
+        ScreenShakeManager.Instance.ShakeScreen();
         canTakeDamage = false;
         // Take damage from the enemy 
         currentHealth -= damage;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamgeWeapon : MonoBehaviour
 {
-    private int damageAmount;
+    [SerializeField] private int damageAmount = 1;
 
     private void Start()
     {
