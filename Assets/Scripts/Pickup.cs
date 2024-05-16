@@ -1,8 +1,18 @@
+using Cinemachine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    private enum PickUpType
+    {
+        GoldCoin,
+        StaminaGlobe,
+        HealthGlobe
+    }
+
+    [SerializeField] private PickUpType pickUpType;
     [SerializeField] private float pickUpDistance = 5f;
     [SerializeField] private float accelartionRate = .2f;
     [SerializeField] private float moveSpeed = 3f;
@@ -27,12 +37,11 @@ public class Pickup : MonoBehaviour
     {
         Vector3 playerPos = PlayerController.Instance.transform.position;
 
-        if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
+        if(Vector3.Distance(transform.position, playerPos) < pickUpDistance)
         {
             moveDir = (playerPos - transform.position).normalized;
             moveSpeed += accelartionRate;
-        } else
-        {
+        } else {
             moveDir = Vector3.zero;
             moveSpeed = 0;
         }
@@ -43,15 +52,22 @@ public class Pickup : MonoBehaviour
         rb.velocity = moveDir * moveSpeed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-
-        // Check if the player is colliding with an enemy
-        if (collision.gameObject.CompareTag("Player"))
+        /*if (collision.gameObject.CompareTag("Player"))
         {
-            // Destroy coin
-            Destroy(gameObject);
 
+            Debug.Log("Touching plsyer");
+            Destroy(gameObject);
+        }*/
+        //Destroy(gameObject);
+        
+        if (collision.gameObject.GetComponent<PlayerController>())
+        {
+
+            DetectPickupType();
+            Destroy(gameObject);
+           
         }
     }
 
@@ -74,6 +90,22 @@ public class Pickup : MonoBehaviour
 
             transform.position = Vector2.Lerp(startPoint, endPoint, linearT) + new Vector2(0f, height);
             yield return null;
+        }
+    }
+
+    private void DetectPickupType()
+    {
+        switch (pickUpType)
+        {
+            case PickUpType.GoldCoin:
+                Debug.Log("GoldCoin");
+                break;
+            case PickUpType.HealthGlobe:
+                Debug.Log("HealthGlobe");
+                break;
+            case PickUpType.StaminaGlobe:
+                Debug.Log("StaminaGlobe");
+                break;
         }
     }
 }

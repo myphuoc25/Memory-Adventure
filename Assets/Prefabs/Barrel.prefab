@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8663546165766385449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef3b1026b122ca409a90f15a369bd79, type: 3}
+  m_Script: {fileID: 11500000, guid: 173d491ffe05f39409b25d70fd8f3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyVFX: {fileID: 5830180195818905056, guid: ff463638d96fe5b41a7e1eb4980869fc, type: 3}
@@ -144,7 +144,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8663546165766385449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f9df7ae3e6d094fa5dcfd709b9d07e, type: 3}
+  m_Script: {fileID: 11500000, guid: 004b40b39b831ef46a3a884fc25b8363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goinCoinPrefab: {fileID: 8679756578218267137, guid: a168646a096c267489369c88208e26cf, type: 3}
+  golfCoin: {fileID: 8679756578218267137, guid: 7d21c8938559fc644b5fa0758ff58377, type: 3}
+  healthGlobe: {fileID: 8679756578218267137, guid: 38af71ee57c7bf24da99849945959789, type: 3}
+  staminaGlobe: {fileID: 8679756578218267137, guid: 4ff5c6e2e2b8982419e27cb1e1255f89, type: 3}

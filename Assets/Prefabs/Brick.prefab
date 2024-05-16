@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8000849327153117922}
   - component: {fileID: 1416879907082705884}
   - component: {fileID: 1549095359333507874}
-  - component: {fileID: 6591940311943193859}
-  - component: {fileID: 5768959835218213193}
+  - component: {fileID: -3233242762597908294}
+  - component: {fileID: -3662786279708231141}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -122,7 +122,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.017037379, y: -0.083027214}
   m_Size: {x: 1.6422106, y: 1.7784106}
   m_Direction: 0
---- !u!114 &6591940311943193859
+--- !u!114 &-3233242762597908294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,20 +131,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6834884790200927656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f9df7ae3e6d094fa5dcfd709b9d07e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goinCoinPrefab: {fileID: 8679756578218267137, guid: a168646a096c267489369c88208e26cf, type: 3}
---- !u!114 &5768959835218213193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6834884790200927656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef3b1026b122ca409a90f15a369bd79, type: 3}
+  m_Script: {fileID: 11500000, guid: 173d491ffe05f39409b25d70fd8f3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyVFX: {fileID: 5830180195818905056, guid: 18c5930bbbc003a45b1d098bf303458e, type: 3}
+--- !u!114 &-3662786279708231141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834884790200927656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b40b39b831ef46a3a884fc25b8363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golfCoin: {fileID: 8679756578218267137, guid: 7d21c8938559fc644b5fa0758ff58377, type: 3}
+  healthGlobe: {fileID: 8679756578218267137, guid: 38af71ee57c7bf24da99849945959789, type: 3}
+  staminaGlobe: {fileID: 8679756578218267137, guid: 4ff5c6e2e2b8982419e27cb1e1255f89, type: 3}
