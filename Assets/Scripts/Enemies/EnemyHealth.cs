@@ -48,6 +48,9 @@ public class EnemyHealth : MonoBehaviour
 
             // Destroy the death VFX after 2 seconds
             Destroy(animationDeath, 2);
+
+            // Add level to the player
+            PlayerController.Instance.GetComponent<PlayerLevel>().LevelUp();
         }
     }
 

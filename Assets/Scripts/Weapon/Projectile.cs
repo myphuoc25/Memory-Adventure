@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private GameObject hitVFXPrefab;
     [SerializeField] private bool isEnemyPojectle = false; // Determine if the projectile is from the enemy
 
-    //private WeaponInfo weaponInfo;
+    //private GetWeaponInfo weaponInfo;
     private Vector3 startPosition;
     private Vector3 moveDirection;
     private Rigidbody2D rb;

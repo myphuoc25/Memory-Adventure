@@ -5,7 +5,8 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 {
     public MonoBehaviour CurrentActiveWeapon { get; private set; }
 
-    public bool attackButtonPressed, isAttacking = false;
+    private bool attackButtonPressed = false;
+    public bool isAttacking = false;
     private PlayerControls playerControls;
     private float timeBetweenAttacks;
 

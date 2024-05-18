@@ -11,6 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer trailRenderer;
     [SerializeField] private Transform weaponCollider; // This is the collider of the weapon
+    [SerializeField] public PlayerState playerState;
 
     private bool isBoosting = false;
     public bool FacingLeft { get; private set; } = false;
@@ -21,6 +22,7 @@ public class PlayerController : Singleton<PlayerController>
     private KnockBack knockBack;
     private Animator playerAnimator;
     private SpriteRenderer playerSprite;
+
     private CompanisionAI companionAI;
     private CompanisionHealth companionHealth;
     [SerializeField] public List<CompanisionAI> list = new List<CompanisionAI>();
@@ -33,6 +35,7 @@ public class PlayerController : Singleton<PlayerController>
         playerAnimator = GetComponent<Animator>();
         playerSprite = GetComponent <SpriteRenderer>();
         knockBack = GetComponent<KnockBack>();
+
         companionAI = FindObjectOfType<CompanisionAI>();
         companionHealth = FindObjectOfType<CompanisionHealth>();
         list = new List<CompanisionAI>(FindObjectsOfType<CompanisionAI>());
@@ -43,13 +46,16 @@ public class PlayerController : Singleton<PlayerController>
         playerControls.Enable();
     }
 
-    //private void OnDisable()
-    //{
-    //    playerControls.Disable();
-    //}
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     private void Start()
     {
+        moveSpeed = playerState.moveSpeed;
+
+
         playerControls.Action.Dash.performed += _ => Dash();
     }
 
@@ -57,6 +63,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         StatePlayer();
         StateDirection();
+
+        
     }
 
     private void FixedUpdate()
@@ -121,36 +129,28 @@ public class PlayerController : Singleton<PlayerController>
             return;
         }
 
-        //float currentMoveSpeed = moveSpeed;
+        float currentMoveSpeed = moveSpeed;
 
-        //if (isBoosting)
-        //{
-        //    currentMoveSpeed *= boostSpeed;
-        //}
+        if (isBoosting)
+        {
+            currentMoveSpeed *= boostSpeed;
+        }
 
-        //rb.MovePosition(rb.position + currentMoveSpeed * Time.fixedDeltaTime * movement);
+        rb.MovePosition(rb.position + currentMoveSpeed * Time.fixedDeltaTime * movement);
 
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void Dash()
     {
         // Tăng tốc độ di chuyển lên dashSpeed
-        //moveSpeed *= dashSpeed;
+        moveSpeed *= dashSpeed;
 
         // Bật trailRenderer để hiển thị hiệu ứng Dash
-        //trailRenderer.emitting = true;
+        trailRenderer.emitting = true;
 
         // Xử lý việc kết thúc Dash sau một khoảng thời gian nhất định.
-        //StartCoroutine(EndDashRoutine());
-
-        if (!isBoosting)
-        {
-            isBoosting = true;
-            moveSpeed *= dashSpeed;
-            trailRenderer.emitting = true;
-            StartCoroutine(EndDashRoutine());
-        }
+        StartCoroutine(EndDashRoutine());
     }
 
     private IEnumerator EndDashRoutine()
