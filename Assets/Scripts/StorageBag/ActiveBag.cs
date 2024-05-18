@@ -43,19 +43,37 @@ public class ActiveBag : MonoBehaviour
 
     private void ChangeActiveWeapon()
     {
+        if(ActiveWeapon.Instance.CurrentActiveWeapon != null)
+        {
+            Destroy(ActiveWeapon.Instance.CurrentActiveWeapon.gameObject);
+        }
+
         // Destroy the current weapon
-        ActiveWeapon.Instance.DestroyCurrentWeapon();
+        //ActiveWeapon.Instance.DestroyCurrentWeapon();
 
         // If the active slot is empty, return
-        if (transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo == null)
+        //if (transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo == null)
+        //{
+        //    Debug.Log("No weapon in this slot");
+        //    ActiveWeapon.Instance.WeaponNull();
+        //    return;
+        //}
+
+        //GameObject weaponSlot = transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo.weaponPrefab;
+
+        Transform childTransform = transform.GetChild(activeSlotIndexNum);
+        InventorySlot inventorySlot = childTransform.GetComponentInChildren<InventorySlot>();
+        WeaponInfo weaponInfo = inventorySlot.WeaponInfo();
+        GameObject weaponToSpawn = weaponInfo.weaponPrefab;
+
+        if(weaponInfo == null)
         {
-            Debug.Log("No weapon in this slot");
             ActiveWeapon.Instance.WeaponNull();
             return;
         }
 
-        GameObject weaponSlot = transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().WeaponInfo.weaponPrefab;
-        GameObject newWeapon = Instantiate(weaponSlot, ActiveWeapon.Instance.transform.position, Quaternion.identity);
+        //GameObject newWeapon = Instantiate(weaponSlot, ActiveWeapon.Instance.transform.position, Quaternion.identity);
+        GameObject newWeapon = Instantiate(weaponToSpawn, ActiveWeapon.Instance.transform.position, Quaternion.identity);
 
         ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, 0);
         newWeapon.transform.SetParent(ActiveWeapon.Instance.transform);

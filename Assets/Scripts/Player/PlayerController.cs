@@ -43,10 +43,10 @@ public class PlayerController : Singleton<PlayerController>
         playerControls.Enable();
     }
 
-    //private void OnDisable()
-    //{
-    //    playerControls.Disable();
-    //}
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     private void Start()
     {
@@ -121,36 +121,36 @@ public class PlayerController : Singleton<PlayerController>
             return;
         }
 
-        //float currentMoveSpeed = moveSpeed;
+        float currentMoveSpeed = moveSpeed;
 
-        //if (isBoosting)
-        //{
-        //    currentMoveSpeed *= boostSpeed;
-        //}
+        if (isBoosting)
+        {
+            currentMoveSpeed *= boostSpeed;
+        }
 
-        //rb.MovePosition(rb.position + currentMoveSpeed * Time.fixedDeltaTime * movement);
+        rb.MovePosition(rb.position + currentMoveSpeed * Time.fixedDeltaTime * movement);
 
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        //rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void Dash()
     {
         // Tăng tốc độ di chuyển lên dashSpeed
-        //moveSpeed *= dashSpeed;
+        moveSpeed *= dashSpeed;
 
         // Bật trailRenderer để hiển thị hiệu ứng Dash
-        //trailRenderer.emitting = true;
+        trailRenderer.emitting = true;
 
         // Xử lý việc kết thúc Dash sau một khoảng thời gian nhất định.
-        //StartCoroutine(EndDashRoutine());
+        StartCoroutine(EndDashRoutine());
 
-        if (!isBoosting)
-        {
-            isBoosting = true;
-            moveSpeed *= dashSpeed;
-            trailRenderer.emitting = true;
-            StartCoroutine(EndDashRoutine());
-        }
+        //if (!isBoosting)
+        //{
+        //    isBoosting = true;
+        //    moveSpeed *= dashSpeed;
+        //    trailRenderer.emitting = true;
+        //    StartCoroutine(EndDashRoutine());
+        //}
     }
 
     private IEnumerator EndDashRoutine()

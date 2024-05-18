@@ -6,6 +6,9 @@ public class InventorySlot : MonoBehaviour
 {
     [SerializeField] private WeaponInfo weaponInfo;
 
-    public WeaponInfo WeaponInfo => weaponInfo;
+    public WeaponInfo WeaponInfo()
+    {
+        return weaponInfo;
+    }
 
 }

@@ -74,4 +74,9 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void UpdateMoveSpeed(float moveSpeed)
+    {
+        this.moveSpeed = moveSpeed;
+    }
 }
