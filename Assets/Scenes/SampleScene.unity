@@ -8672,6 +8672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 5193173592658721098, guid: 25f470506aa8e6a4aa3c921e16b76288, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5802080227856145193, guid: 25f470506aa8e6a4aa3c921e16b76288, type: 3}
       propertyPath: moveSpeed
       value: 10
