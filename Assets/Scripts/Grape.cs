@@ -23,12 +23,14 @@ public class Grape : MonoBehaviour, IEnemy
 
         if (transform.position.x - PlayerController.Instance.transform.position.x < 0)
         {
+            SpawnProjectileAnimEvent();
             spriteRenderer.flipX = false;
         }
         else
         {
             spriteRenderer.flipX = true;
         }
+        
     }
 
     public void SpawnProjectileAnimEvent()
